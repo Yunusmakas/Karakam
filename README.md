@@ -1,85 +1,150 @@
-<img width="5299" height="4618" alt="Untitled diagram-2026-01-01-134606" src="https://github.com/user-attachments/assets/dc179a44-e010-4f70-b1c4-cddc6340e486" /># KARAKAM: AI Based Next-Gen Android Malware Analysis Platform
+# KARAKAM  
+## AI-Based Next-Generation Android Malware Analysis Platform
 
 KARAKAM, Android zararlı yazılımlarını tespit etmek için statik analiz, ağ keşfi ve tehdit istihbaratını otonom bir mimaride birleştiren, yapay zeka destekli bir analiz platformudur.
 
-<img width="829" height="990" alt="image" src="https://github.com/user-attachments/assets/b601639d-aed9-4049-88eb-4da4a537c9f0" />
+---
 
+## 📌 Genel Bakış
+
+KARAKAM; Android uygulamalarını çok katmanlı olarak analiz eder, elde edilen teknik verileri özel eğitilmiş bir Büyük Dil Modeli (LLM) ile yorumlar ve uygulamanın güvenlik durumunu otonom biçimde sınıflandırır.
+
+Desteklenen çıktı sınıfları:
+- **BENIGN**
+- **SUSPICIOUS**
+- **MALICIOUS**
+
+---
 
 ## 🚀 Özellikler
 
-- **Hibrit Analiz:** MobSF (Statik), Subfinder (Network) ve VirusTotal (Intelligence) verilerini birleştirir.
-- **Özel Eğitilmiş LLM:** Llama-3.1 8B üzerine siber güvenlik odaklı Fine-Tune edilmiş **Karakam-AI** karar mekanizması.
-- **Otonom Karar:** Teknik verileri yorumlayarak BENIGN, SUSPICIOUS veya MALICIOUS sonuçları üretir.
-- **Veri Gizliliği:** GGUF ve Ollama desteği sayesinde tamamen yerel (on-premise) çalışma imkanı.
-- **Detaylı Raporlama:** Excel formatında toplu analiz çıktısı ve MITRE ATT&CK uyumlu teknik gerekçelendirme.
+- **Hibrit Analiz**
+  - MobSF (Statik Analiz)
+  - Subfinder (Ağ Keşfi)
+  - VirusTotal (Tehdit İstihbaratı)
+
+- **Özel Eğitilmiş LLM**
+  - Llama-3.1-8B tabanlı
+  - Siber güvenlik odaklı fine-tune edilmiş **Karakam-AI**
+
+- **Otonom Karar Mekanizması**
+  - Teknik verileri bağlamsal olarak yorumlar
+  - İnsan müdahalesi olmadan nihai karar üretir
+
+- **Veri Gizliliği**
+  - GGUF & Ollama desteği
+  - Tamamen on-premise çalışabilir mimari
+
+- **Detaylı Raporlama**
+  - Excel formatında toplu analiz çıktısı
+  - MITRE ATT&CK uyumlu teknik gerekçelendirme
+
+---
 
 ## 🛠 Mimari Yapı
 
-Uygulama, yüksek performans için **FastAPI** asenkron mimarisi üzerine inşa edilmiştir.
+Uygulama, yüksek performans ve ölçeklenebilirlik için **FastAPI tabanlı asenkron mimari** üzerine inşa edilmiştir.
 
+<img width="1920" height="1080" alt="Adsız tasarım (1)" src="https://github.com/user-attachments/assets/79d0ecc9-c1cd-453a-b019-1a9a643e0596" />
 
-<img width="5299" height="4618" alt="Untitled diagram-2026-01-01-134606" src="https://github.com/user-attachments/assets/a1181345-12e4-41df-90a3-39a80c910de6" />
+### Temel Bileşenler
 
-### Bileşenler
+- **Static Analysis**
+  - MobSF API entegrasyonu
+  - Permission ve API çağrısı analizi
 
-- **Static Analysis:** MobSF API entegrasyonu ile izin ve API çağrısı analizi.
-- **Reconnaissance:** Docker üzerinde çalışan Subfinder ile pasif subdomain keşfi.
-- **AI Engine:** Hugging Face üzerinde yayınlanan [Karakam-Llama3.1-8B](https://huggingface.co/TolgaTD/karakam-llama3.1-8b-gguf) modeli.
+- **Reconnaissance**
+  - Docker üzerinde çalışan Subfinder
+  - Pasif subdomain keşfi
+
+- **AI Engine**
+  - Hugging Face üzerinde yayınlanan özel model  
+    https://huggingface.co/TolgaTD/karakam-llama3.1-8b-gguf
+
+---
+
+## 🧠 Kullanılan Teknolojiler
+
+- Python 3.9+
+- FastAPI
+- Docker
+- MobSF
+- Subfinder
+- VirusTotal API
+- Ollama
+- Llama-3.1-8B (Fine-Tuned)
+
+---
 
 ## 🔧 Kurulum
 
 ### 1. Gereksinimler
 
-- Python 3.9+
-- Docker (Subfinder ve MobSF için)
-- Ollama (Modeli yerel çalıştırmak için)
-- MobSF Docker Version
-- Subfinder Docker Version
+- Python 3.9 veya üzeri
+- Docker
+- Ollama
+- MobSF (Docker sürümü)
+- Subfinder (Docker sürümü)
 
 ### 2. Modeli Hazırlama
 
-Modeli Hugging Face'den indirin ve Ollama ile ayağa kaldırın:
+Model Hugging Face üzerinden indirilir ve Ollama ile yerel olarak ayağa kaldırılır.  
+Model adı: **karakam-ai**
 
-```bash
-# Modeli Hugging Face'den indir (veya GGUF dosyasını proje dizinine koy)
-# Modelfile oluştur ve modeli build et:
-ollama create karakam-ai -f Modelfile
-3. Uygulamayı Çalıştırma
-Gerekli paketleri yükleyin ve sunucuyu başlatın:
+### 3. Uygulamayı Çalıştırma
 
-Bash
+Gerekli Python bağımlılıkları kurulduktan sonra FastAPI sunucusu başlatılır.
 
-pip install -r requirements.txt
-uvicorn app:app --reload
-📊 Ekran Görüntüleri
-AI Analiz Sonuçları
-<img width="782" height="411" alt="image" src="https://github.com/user-attachments/assets/7f957496-ef81-4a9a-a255-8ee2e56e6c7c" />
+**Not:**  
+Bu aşamadan önce MobSF ve Subfinder servislerinin Docker üzerinde çalışır durumda olduğundan emin olun.  
+Ayrıca Ollama servisinin aktif olması ve **karakam-ai** modelinin başarıyla yüklenmiş olması gerekmektedir.  
+Uygulama, bu servislerle API üzerinden haberleşerek analiz sürecini yürütür.
+
+---
+
+## 📊 Ekran Görüntüleri
+
+### 1. AI Analiz Sonuçları
+
+<img width="779" height="405" alt="image" src="https://github.com/user-attachments/assets/e655e24f-3a68-4c0e-b357-ca3d9717469e" />
+ 
+(BENIGN / SUSPICIOUS / MALICIOUS sınıflandırma çıktıları)
+
+---
+
+### 2. İşlenmemiş Uygulama Verileri
+
+<img width="782" height="543" alt="image" src="https://github.com/user-attachments/assets/c8fe0eea-da72-4e34-87c6-cebf710beb8b" />
 
 
-İşlenmemiş Uygulama Verileri
-<img width="784" height="546" alt="image" src="https://github.com/user-attachments/assets/33e27c02-2ab5-419e-8a9a-f35b470080ab" />
+(MobSF, ağ keşfi ve tehdit istihbaratından elde edilen ham çıktılar)
+
+---
 
 
-📜 Teşekkür ve Atıflar (Acknowledgements)
-Bu projenin hayata geçmesinde katkısı olan kişi ve kurumlara teşekkürlerimizi sunarız:
+## 📜 Teşekkür ve Atıflar
 
-Akademik Danışmanlık: Proje sürecindeki rehberliği için Prof. Dr. İbrahim Alper DOĞRU'ya teşekkürlerimizi sunarız.
+### Akademik Danışmanlık
+- **Prof. Dr. İbrahim Alper DOĞRU**
 
-Veri ve Altyapı Desteği:
+### Veri ve Altyapı Desteği
+- **VirusTotal** – Premium API erişimi
+- **AndroZoo** – Zararlı yazılım veri seti erişimi
 
-🛡️ VirusTotal: Akademik araştırmamız için altyapılarını açarak sağladıkları Premium API Key desteği sayesinde tehdit istihbaratı ağımız güçlenmiştir. Destekleri için teşekkür ederiz.
+### Açık Kaynak Projeler
+- **MobSF & JADX** – Statik analiz
+- **Subfinder (ProjectDiscovery)** – Ağ keşfi
 
-📦 AndroZoo: Geniş ölçekli zararlı yazılım veri setine erişimimiz adına sağladıkları API desteği için teşekkür ederiz.
+---
 
-Açık Kaynak Projeler:
+## 📄 Lisans
 
-🔍 MobSF & JADX: Statik analiz ve tersine mühendislik süreçlerindeki mükemmel araçları için teşekkür ederiz.
+Bu proje **akademik kullanım** şartlarına tabidir.
 
-🌐 Subfinder (ProjectDiscovery): Ağ keşif yeteneklerimizi borçlu olduğumuz hızlı ve etkili araçları için teşekkür ederiz.
+---
 
-📄 Lisans
-Bu proje akademik kullanım şartlarına tabidir.
 
-Yazar: Tolga Demirel
-
-Kurum: Gazi Üniversitesi, Bilgisayar Mühendisliği Bölümü (2026)
+**Tolga Demirel**  
+Gazi Üniversitesi  
+Bilgisayar Mühendisliği Bölümü  
+2026
